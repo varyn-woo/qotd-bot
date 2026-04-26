@@ -1,27 +1,33 @@
 {
-  "name": "discord-getting-started",
+  "name": "qotd-bot",
   "private": true,
   "version": "1.0.0",
-  "description": "Discord example app",
-  "main": "app.js",
+  "description": "Question of the Day bot",
+  "main": "app.ts",
   "type": "module",
   "engines": {
     "node": ">=18.x"
   },
   "scripts": {
-    "start": "node app.js",
-    "register": "node commands.js",
-    "dev": "nodemon app.js"
+    "start": "node --loader ts-node/esm app.ts",
+    "register": "node --loader ts-node/esm commands.ts",
+    "dev": "nodemon --exec \"node --loader ts-node/esm\" app.ts"
   },
   "author": "Shay DeWael",
   "license": "MIT",
   "dependencies": {
+    "@ngrok/ngrok": "^1.7.0",
     "discord-interactions": "^4.0.0",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.6.1",
     "express": "^4.18.2",
-    "https": "^1.0.0"
+    "https": "^1.0.0",
+    "ngrok": "^5.0.0-beta.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.0"
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "nodemon": "^3.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.3"
   }
 }
